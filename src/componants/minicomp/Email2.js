@@ -11,6 +11,7 @@ export const Email2 = () => {
   
       .then((result) => {
           console.log(result.text);
+          window.alert(result.text);
           window.location.reload(); 
       }, (error) => {
           console.log(error.text);
@@ -18,25 +19,27 @@ export const Email2 = () => {
   };
 
   return (
+    <div className=' container shadow-lg p-3 mb-5 bg-white rounded' style={{ width: '18rem' }}>
     <form ref={form} onSubmit={sendEmail } id='modal'>
-        <h3 className='container'>Ask your Query</h3>
-        <div className='input-group input-group-md mb-3'>
+        <h3 className='container m-3'>Ask your Query</h3>
+        <div className='input-group input-group-sm mb-3 mt-5'>
       <label className='input-group-text' >Name</label>
       <input className='' type="text" name="user_name" required='true' />
       </div>
-      <div className='input-group input-group-md mb-3'>
+      <div className='input-group input-group-sm mb-3'>
       <label className='input-group-text'>Email</label>
       <input type="email" name="user_email" required='true'/>
       </div>
-      <div  className='input-group input-group-md mb-3'>
+      <div  className='input-group input-group-sm mb-3'>
       <label className='input-group-text'>Qustion</label>
       <textarea name="message" required='true'/>
       </div>
       <div className=''>
       <input className='btn btn-info me-5 ps-4 pe-4' type="submit" value="Send"  />
-      <input className='btn btn-danger ms-5 ps-4 pe-4' type="reset" value="reset" onClick={freset}/>
+      <input className='btn btn-danger ms-4 ps-4 pe-4' type="reset" value="reset" onClick={freset}/>
       </div>
       
     </form>
+    </div>
   );
 };
